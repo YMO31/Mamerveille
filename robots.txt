@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.mamerveille-castelnau.fr/sitemap.xml
