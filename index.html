@@ -1,1 +1,474 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAM'erveille - Accueil</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #ffd93d);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        .social-icons img {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0) invert(1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.3rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .hero {
+            position: relative;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            background-image: url('images/1000196006.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.85), rgba(255, 217, 61, 0.75));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #ff6b9d;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #ffd93d;
+            padding-bottom: 0.5rem;
+        }
+        
+        .card h3 {
+            color: #6bcf7f;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #fff3cd, #ffe69c);
+            padding: 1.5rem;
+            border-left: 5px solid #ffd93d;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .info-box a {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 15px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 3.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            font-size: 3rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #1877f2, #4267B2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-links a:nth-child(2) {
+            background: linear-gradient(135deg, #E1306C, #C13584);
+        }
+        
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        footer a {
+            color: #ffd93d;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .header-right { flex-direction: column; }
+            nav ul { flex-direction: column; width: 100%; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+            .card { padding: 1.5rem; }
+            .lightbox-nav { padding: 0.5rem 1rem; font-size: 2rem; }
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🏡 MAM'erveille</div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/Mamerveille-Castelnau-dEstr%C3%A9tefonds/61555855255343/?locale=fr_FR" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/mamerveille31620/" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Accueil</a></li>
+                        <li><a href="charte.html">La Charte</a></li>
+                        <li><a href="projet.html">Projet d'Accueil</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>MAM'erveille</h1>
+            <p>Maison d'Assistantes Maternelles à Castelnau d'Estrétefonds</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>🌈 Bienvenue chez MAM'erveille</h2>
+            <p>Bienvenue à la Maison d'Assistantes Maternelles, un lieu d'accueil chaleureux et sécurisé, pensé pour le bien-être et l'épanouissement des tout-petits.</p>
+            <p>Notre MAM est animée par trois assistantes maternelles agréées, professionnelles de la petite enfance, qui accueillent jusqu'à 12 enfants dans un environnement bienveillant, stimulant et adapté à leur âge.</p>
+            <p>Nous proposons un accueil personnalisé, respectueux du rythme de chaque enfant, favorisant son autonomie, sa socialisation et son développement affectif, moteur et sensoriel. Les journées sont rythmées par des activités variées : jeux libres, ateliers créatifs, lectures, comptines, activités motrices, ainsi que des sorties lorsque le temps le permet.</p>
+            <p>La MAM offre l'avantage d'un accueil familial tout en permettant la vie en collectivité, favorisant l'apprentissage du vivre-ensemble dans un cadre rassurant. La confiance, l'écoute et la communication avec les familles sont au cœur de notre projet éducatif.</p>
+            <p><strong>Nous serons ravies d'accompagner votre enfant dans ses premières découvertes et de partager avec vous cette belle aventure.</strong></p>
+            
+            <div class="info-box">
+                <p><strong>📍 Adresse :</strong> 46A Avenue de Montauban, 31620 Castelnau d'Estrétefonds</p>
+                <p><strong>📞 Téléphone :</strong> <a href="tel:0982774104">09 82 77 41 04</a></p>
+                <p><strong>✉️ Email :</strong> <a href="mailto:mamerveille.castelnau@gmail.com">mamerveille.castelnau@gmail.com</a></p>
+                <p><strong>🕐 Horaires :</strong> Du lundi au vendredi de 8h00 à 18h00</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>👩‍👧‍👦 Notre Équipe</h2>
+            
+            <h3>Angélique Guez</h3>
+            <p>Assistante maternelle agréée depuis 2011, j'ai exercé auparavant dans une crèche et animatrice dans un centre de loisir pendant 2 ans. Je suis maman de deux enfants, Jules et Gabin.</p>
+            <p>J'ai mon BEP sanitaire et sociale, mon CAP petite enfance, le BAFA et la formation des 1ers secours (SST).</p>
+            <p>L'accueil des enfants dans une MAM me permet d'allier mon expérience à domicile tout en proposant un accueil diversifié grâce à sa petite collectivité. Le travail en équipe permet de s'enrichir des compétences et des expériences de chacune.</p>
+            
+            <h3>Caroline Cabos-Reynès</h3>
+            <p>Assistante maternelle agréée depuis 2015, je suis mariée et maman de 3 enfants, Manon, Mathys et Timéo.</p>
+            <p>J'ai mon CAP petite enfance et mon BEP sanitaire et social ainsi que la formation des 1ers secours (SST).</p>
+            <p>L'accueil des enfants en MAM est une petite collectivité qui permet d'accompagner avec bienveillance les enfants quotidiennement, participer à leur développement et leur épanouissement grâce à cette relation privilégiée. Être auprès des enfants m'a apporté beaucoup de positif. C'est pour cela que je souhaite travailler en MAM avec mes collègues pour monter des projets, s'entraider et continuer dans un esprit d'équipe.</p>
+            
+            <h3>Magalie Gille</h3>
+            <p>Je suis mariée et heureuse maman de 2 enfants, Maëlya et Milàn.</p>
+            <p>Je suis assistante maternelle agréée depuis 2018, j'aime travailler avec les enfants en les accompagnant à l'autonomie par l'expérience. Je pratique la motricité libre au rythme de l'enfant.</p>
+            <p>Je suis sensible à l'accompagnement de l'enfant dans sa globalité. Toujours dans la pédagogie douce et positive, le respect et la bienveillance, j'aime valoriser et encourager l'enfant dans son développement.</p>
+            <p>Je propose à l'enfant des activités, des sorties et des temps d'éveil adaptés à son développement. Toujours en recherche constante d'amélioration, j'enrichis mes connaissances à travers l'échange et les formations.</p>
+        </div>
+
+        <div class="card">
+            <h2>📸 Notre Lieu d'Accueil</h2>
+            <p>Maison T4 de plein pied d'environ 140 m² spacieuse et lumineuse avec un jardin spacieux entièrement sécurisé et clôturé. Découvrez notre espace en photos :</p>
+            <div class="gallery" id="gallery"></div>
+        </div>
+
+        <div class="card">
+            <h2>💬 Suivez-nous sur les Réseaux Sociaux</h2>
+            <p style="text-align: center;">Retrouvez nos actualités, photos et moments de vie quotidienne :</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/people/Mamerveille-Castelnau-dEstr%C3%A9tefonds/61555855255343/?locale=fr_FR" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/mamerveille31620/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)">‹</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)">›</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MAM'erveille - Tous droits réservés</p>
+        <p>Angélique, Caroline & Magalie</p>
+    </footer>
+
+    <script>
+        const images = [
+            'images/1000196006.jpg',
+            'images/1000196014.jpg',
+            'images/1000196015.jpg',
+            'images/1000196016.jpg',
+            'images/1000196017.jpg',
+            'images/1000196018.jpg',
+            'images/1000196019.jpg',
+            'images/1000196020.jpg',
+            'images/1000196021.jpg',
+            'images/1000196022.jpg',
+            'images/1000196023.jpg',
+            'images/1000196024.jpg'
+        ];
+        
+        const gallery = document.getElementById('gallery');
+        images.forEach((src, i) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            div.innerHTML = `<img src="${src}" alt="">`;
+            div.onclick = () => openLightbox(i);
+            gallery.appendChild(div);
+        });
+        
+        let currentIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        function openLightbox(i) {
+            currentIndex = i;
+            lightboxImg.src = images[i];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function changeLightboxImage(dir) {
+            currentIndex = (currentIndex + dir + images.length) % images.length;
+            lightboxImg.src = images[currentIndex];
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+            if (e.key === 'ArrowRight') changeLightboxImage(1);
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    </script>
+</body>
+</html>
