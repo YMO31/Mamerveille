@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAM'erveille - Projet d'Accueil</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #ffd93d);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.3rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(255, 217, 61, 0.9));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #ff6b9d;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #ffd93d;
+            padding-bottom: 0.5rem;
+        }
+        
+        .card h3 {
+            color: #6bcf7f;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .card ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .card em {
+            color: #666;
+            font-style: italic;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        footer a {
+            color: #ffd93d;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .header-right { flex-direction: column; }
+            nav ul { flex-direction: column; width: 100%; }
+            .page-header h1 { font-size: 1.8rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🏡 MAM'erveille</div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/Mamerveille-Castelnau-dEstr%C3%A9tefonds/61555855255343/?locale=fr_FR" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/mamerveille31620/" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="charte.html">La Charte</a></li>
+                        <li><a href="projet.html" class="active">Projet d'Accueil</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>📖 Projet d'Accueil</h1>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Introduction</h2>
+            <p><strong>L'objectif de ce projet d'accueil est de préciser le cadre et les orientations pédagogiques de notre structure.</strong></p>
+            <p>Ce projet a été écrit par nos soins, grâce à l'expérience de notre métier de la petite enfance et la motivation de chacune.</p>
+            <p>MAM'erveille est le résultat d'une réflexion commune autour de nos expériences respectives dans le domaine de la petite enfance et de notre passion pour ce métier.</p>
+            <p>Nous sommes trois assistantes maternelles qui travaillons dans une maison adaptée et totalement dédiée à l'accueil des enfants de moins de 6 ans.</p>
+            <p>Notre objectif est de proposer un lieu de vie à mi-chemin entre l'accueil personnalisé d'une assistante maternelle et la socialisation qu'apporte une crèche. Nous souhaitons un accueil chaleureux, familial et socialisant. Notre volonté est d'en faire un lieu de bien-être et d'épanouissement pour les enfants, un lieu d'écoute et d'échange.</p>
+            <p>Enrichies toutes les trois de notre passé professionnel et aujourd'hui de notre métier d'assistante maternelle, nous nous sommes choisies autour de ce projet de création d'une MAM qui correspond à nos aspirations et valeurs professionnelles.</p>
+            <p>Notre équipe est complémentaire elle se compose de 3 assistantes maternelles agréées par le Conseil Départemental de la Haute-Garonne.</p>
+        </div>
+
+        <div class="card">
+            <h2>1 - Présentation de la MAM</h2>
+            <p>« MAM'erveille » est une maison située au <strong>46A avenue de Montauban 31620 CASTELNAU D'ESTRÉTEFONDS</strong></p>
+            <p>Mail : <a href="mailto:mamerveille.castelnau@gmail.com" style="color: #ff6b9d;">mamerveille.castelnau@gmail.com</a></p>
+            <p>Maison T4 de plein pied d'environ 140 m² spacieuse et lumineuse avec un jardin spacieux entièrement sécurisé et clôturé. La maison est composée d'une agréable pièce de vie avec 3 chambres. Cette maison est située sur l'avenue principale du village proche du relais petite enfance et du parc pour enfants. La maison est située à égale distance entre Toulouse et Montauban et à proximité de l'accès autoroute.</p>
+            <p><strong>La MAM est ouverte du lundi au vendredi de 8h00 à 18h00.</strong></p>
+            
+            <h3>Présentation de notre lieu d'accueil</h3>
+            <p>Maison de plein pied de 114 m² accolée à un garage de 26m² dont une partie isolée et aménagée en salle de motricité. Nous disposons d'une entrée séparée par une barrière et délimitée par des casiers. Une table à langer murale sera à disposition et des portes manteaux de manière à favoriser l'autonomie des enfants.</p>
+            <ul>
+                <li>Une grande pièce de vie avec des différents coins aménagés</li>
+                <li>Un coin repas et activités avec des tables et chaises à disposition</li>
+                <li>Une cuisine ouverte sur l'espace de vie qui peut être séparée par une barrière enroulable. Le tout sur une surface de 46m²</li>
+                <li>Une salle de bain de 8 m² avec 2 tables à langer et un marche-pied toujours dans le but de favoriser l'autonomie des plus grands</li>
+                <li>Un toilette avec réducteur, un pot, un point d'eau et une table à langer murale</li>
+                <li>3 chambres de 13 m² dont 2 chambres pour les bébés et moyens avec lits à barreaux et une chambre pour les plus grands avec des lits couchettes</li>
+                <li>Un bureau d'accueil de 9 m² avec fenêtre et espace buanderie</li>
+                <li>Un garage de 6,5 m² pour stocker les sièges auto et poussettes</li>
+                <li>Un espace motricité et/ou une salle zen de 19,5 m²</li>
+                <li>Un espace sur le devant de la maison pour stationner 2 véhicules</li>
+                <li>Un jardin à l'arrière avec terrasse, un espace potager et un cabanon pour stocker les jeux extérieurs selon la saison</li>
+            </ul>
+            
+            <h3>Nos rôles au sein de la MAM</h3>
+            <p>Les assistantes maternelles sont responsables du projet pédagogique commun, veillent au bon fonctionnement de la maison, au bien-être physique et mental du groupe d'enfants, aux règles d'hygiène et de sécurité, ...</p>
+            <p>C'est le projet élaboré en commun qui est le fil conducteur de notre MAM.</p>
+            <p>Les parents contractualisent avec une des 3 assistantes maternelles. Celle-ci devient la « référente » de l'enfant et des parents. Elle est responsable de l'enfant dans la MAM et devient l'interlocutrice privilégiée des parents. Ils peuvent échanger avec elle en toute confiance, tant sur le quotidien de l'enfant que sur le fonctionnement de la MAM.</p>
+        </div>
+
+        <div class="card">
+            <h2>2 – Découverte de la MAM</h2>
+            
+            <h3>a) La période de familiarisation</h3>
+            <p>Un temps d'adaptation est nécessaire et primordial à tout accueil. Il s'effectuera avec l'assistante maternelle référente.</p>
+            <p>La période d'adaptation permet :</p>
+            <ul>
+                <li>Aux enfants de faire connaissance avec la MAM et découvrir le lieu (son lit, les différents espaces, le jardin, ...) les autres enfants, les assistantes maternelles</li>
+                <li>À l'assistante maternelle de connaître l'enfant et sa famille, d'obtenir les informations sur les rituels de l'enfant, ses habitudes, ses rythmes...</li>
+                <li>Pour les parents : de découvrir un lieu, ses règles, son fonctionnement ainsi que notre structure. Établir une relation de confiance avec l'assistante maternelle référente</li>
+                <li>Les autres enfants : se préparer à l'accueillir et faire connaissance avec l'enfant qui arrive</li>
+            </ul>
+            <p>Cette période permet aussi d'instaurer une relation de confiance entre parents, enfants et assistantes maternelles.</p>
+            
+            <h3>Déroulement de la période de familiarisation</h3>
+            <p>Durant toute la période d'adaptation, l'enfant restera en permanence en contact avec « son » assistante maternelle.</p>
+            <p>La période d'adaptation se déroulera sur le temps nécessaire selon le besoin de l'enfant, sur une période de 15 jours de manière progressive en fonction des enfants, des parents, ... et du besoin des familles.</p>
+            
+            <h3>b) Journée type à la MAM</h3>
+            <p><em>(exemple et horaires donnés à titre indicatif)</em></p>
+            <p><strong>8h00</strong> - Ouverture de la MAM – Arrivée échelonnée des enfants. Accueil individuel de l'enfant avec son parent, transmission et on l'aide à dire au revoir. Si la séparation est difficile nous lui proposons un jeu ou une lecture. Jeux libres et/ou motricité libre pour les plus petits.</p>
+            <p><strong>9h00 / 10h30 :</strong> Relais petite enfance ou activités manuelles et/ou sortie (jardin, promenade, relais, association, médiathèque...). Retour au calme (lecture, comptine...)</p>
+            <p><strong>11h15</strong> Passage aux toilettes, changes si besoin et lavage des mains</p>
+            <p><strong>11h30</strong> Repas des plus petits, et aide à la mise en place des assiettes et couverts pour les plus grands. Lavage des mains à la fin du repas.</p>
+            <p><strong>12h30</strong> Activités calmes (puzzles, lecture, comptines, balle de massage...)</p>
+            <p><strong>12h45</strong> Mise en pyjama/body et change pour la sieste</p>
+            <p><strong>13h00</strong> Sieste</p>
+            <p><strong>15h30</strong> Réveil échelonné et jeux calmes afin de respecter le sommeil des autres enfants</p>
+            <p><strong>16h00</strong> Goûter en intérieur ou en extérieur selon le temps. À l'occasion, les enfants pourront goûter avec un gâteau qu'ils auront fait eux-mêmes.</p>
+            <p><strong>À partir de 16h30</strong> Jeux libres intérieur ou extérieur jusqu'au départ progressif des enfants. Transmission des temps de la journée aux parents. Un départ à la fois de façon à respecter la confidentialité et la sécurité.</p>
+            <p><strong>Fermeture de la MAM au plus tard à 18h15.</strong></p>
+        </div>
+
+        <div class="card">
+            <h2>3 - Notre projet éducatif</h2>
+            <p>Notre approche pédagogique concerne l'évolution des enfants et leurs apprentissages en milieu collectif.</p>
+            
+            <h3>a) Le respect du rythme de l'enfant</h3>
+            <p>Nous favorisons le développement harmonieux des capacités de l'enfant à travers des activités pédagogiques ou culturelles, en respectant son rythme d'évolution et sa personnalité. Notre objectif est de répondre à leur besoin et d'accompagner l'enfant vers l'autonomie et la socialisation pour cela :</p>
+            <ul>
+                <li>Nous veillerons à respecter le rythme de chacun et assurerons les soins nécessaires à leur bien-être</li>
+                <li>Nous mettrons en place un accueil rassurant dans une ambiance chaleureuse et familiale. En prenant le temps nécessaire au besoin de l'enfant, en le rassurant (à l'aide de son objet transitionnel) et en l'invitant à une activité</li>
+                <li>Nous proposerons des jeux, jouets, livres et activités en fonction de l'âge des enfants afin de développer la créativité, la coordination des mouvements</li>
+                <li>Nous échangerons avec les enfants pour développer le langage et la vie en collectivité</li>
+                <li>Nous accompagnerons l'enfant dans ses différents apprentissages (marche, propreté, repas ...) en l'encourageant pour qu'il prenne confiance en lui</li>
+                <li>La propreté est proposée en relais de l'apprentissage à la maison lorsque l'enfant est prêt et volontaire</li>
+                <li>Nous adopterons une attitude positive et encourageante vis-à-vis des enfants pour leur apporter sécurité, soutien et réconfort en toute situation</li>
+            </ul>
+            <p>De plus la sensibilisation à la politesse au fil du temps tiendra une place dans cet éveil social. Nous convierons régulièrement l'enfant à s'exprimer au fur et à mesure avec des formules de politesse (comme par exemple : s'il te plaît, merci, bonjour, au revoir...).</p>
+            <p>Concernant la motricité de l'enfant, nous sommes pour la motricité libre afin de respecter son rythme de développement.</p>
+            
+            <h3>b) Le jeu et les activités</h3>
+            <p>Après les siestes et les repas, l'activité principale d'un enfant reste le jeu. L'enfant crée, apprend, se construit et se développe en jouant.</p>
+            <p>Dans un souci de privilégier la motricité libre, nous n'avons pas de parc mais nous avons dédié un espace de jeux adapté aux tout-petits et à leur niveau de développement. Les bébés étant très curieux et surtout très attentifs à ce qui les entourent (les bruits, les couleurs), ils pourront évoluer en toute liberté et en toute sécurité avec à leur disposition : tapis, jouets, portiques d'éveil.</p>
+            <p>Les comptines, jeux de mains ainsi que l'éveil musical seront donc très appréciés des tout-petits. Ils pourront jouer librement sur les tapis, se retourner, se déplacer, explorer...</p>
+            <p>Pour les plus grands, nous proposons des activités ludiques et éducatives, des jeux d'encastrement, de construction, des jeux d'imitations comme la dînette, déguisement, ... Et nous proposons également des activités dirigées telles que :</p>
+            <ul>
+                <li>des activités psychomotrices : parcours de motricité, rondes,...</li>
+                <li>des activités de motricité fine : gommettes, collage,..</li>
+                <li>des activités d'expression : musique, marionnettes,...</li>
+                <li>des activités de transvasement : sable, graine, eau</li>
+                <li>des activités de manipulation : pâte à modeler, pâte à sel, perles...</li>
+                <li>des activités manuelles : dessin, peintures...</li>
+            </ul>
+            <p>Les animations ne sont jamais imposées. Si tel est son désir, l'enfant est libre de ne pas participer aux activités proposées.</p>
+            <p>Un planning d'activités sera mis en place chaque mois afin de varier nos journées selon les thèmes : Noël, Pâques, carnaval, les 4 saisons...</p>
+            
+            <h3>c) La gestion des conflits entre les enfants</h3>
+            <p>Dans la journée, il se peut que les enfants se mordent, se tirent les cheveux, se tapent. Tous ces gestes qui peuvent paraître violents, font partie du développement de l'enfant. Au fur et à mesure que le langage de l'enfant se développe et grâce à nos interventions constantes et bienveillantes, l'enfant apprendra graduellement à maîtriser son impulsivité, à manifester ses besoins et à régler des conflits autrement que par des comportements agressifs.</p>
+            
+            <h3>d) Sucette et doudou</h3>
+            <p>Le besoin de téter chez l'enfant est un besoin fondamental. Cela permet à l'enfant de se calmer et de maîtriser ses émotions. Ce sont donc des objets de transition très importants pour lui car ils aident à la séparation, rassurent l'enfant, le consolent en cas de chagrin et lui apportent un sentiment de sécurité.</p>
+            <p>Nous mettrons à disposition permanente des pochettes murales, dans la pièce de vie, pour déposer les sucettes et doudous. Selon les activités proposées, nous inviterons l'enfant à prendre ou déposer son doudou.</p>
+        </div>
+
+        <div class="card">
+            <h2>4 - L'enfant à la MAM</h2>
+            
+            <h3>a) L'apprentissage de la propreté et le change</h3>
+            <p>Le change est effectué selon les besoins des enfants et non à des heures fixes. Il s'effectue dans des conditions de sécurité. Si l'enfant est en hauteur, il sera toujours tenu et jamais laissé seul. Cela doit être un moment relationnel, d'échanges, de respect de l'enfant et de son intimité.</p>
+            <p>La salle de change est disposée à l'écart, à l'abri des regards afin de respecter l'intimité de l'enfant, des matelas à langer ainsi qu'un casier pour chaque enfant contenant ses affaires personnelles.</p>
+            <p>Pour les plus grands, c'est le début de la propreté. Un travail avec les familles sera mis en place afin qu'il soit accompagné de façon cohérente dans le cheminement de cette acquisition.</p>
+            <p>Contrôler ses sphincters demande un certain degré de maturité physique et psychologique. Comme pour toutes les acquisitions, l'enfant va suivre son propre rythme, c'est lui qui décide d'être propre. On ne forcera jamais un enfant à aller sur le pot ou sur les toilettes, ni même à y rester.</p>
+            
+            <h3>b) Le sommeil</h3>
+            <p>C'est un moment important où votre enfant va pouvoir se reposer et récupérer.</p>
+            <p>Afin de respecter les consignes de sécurité, les enfants sont couchés sur le dos dans une chambre non surchauffée, volets roulants ajourés et chambre régulièrement aérée.</p>
+            <p>Chez les bébés, le besoin de sommeil peut varier d'un nourrisson à l'autre. Il est très important de respecter le rythme de chacun.</p>
+            <p>Il est nécessaire de nous fournir le doudou et/ou la sucette de l'enfant. Il sera vêtu d'une tenue confortable ou de son pyjama. Afin de favoriser les repères et inviter l'enfant à partir paisiblement dans le sommeil, nous lui proposerons toujours le même lit.</p>
+            <p>Les gigoteuses seront fournies par les parents et lavées avec les draps par nos soins chaque vendredi fin de journée ou avant si besoin.</p>
+            <p>Trois chambres seront consacrées aux siestes et réservées pour chaque tranche d'âges et selon le rythme de chaque enfant.</p>
+            <p>Nous surveillerons son sommeil toutes les 15 minutes et des visiophones seront installés dans chaque chambre.</p>
+            
+            <h3>c) L'alimentation</h3>
+            <p>Manger est un plaisir et un moment de convivialité. C'est un moment propice aux échanges et découvertes au niveau tactile et sensoriel.</p>
+            <p>Au cours du repas, nous veillerons à créer une ambiance agréable et calme. Nous favoriserons l'autonomie et l'éveil au goût.</p>
+            <p>Le repas et goûter seront amenés par les parents en prolongation avec les habitudes instaurées à la maison. Pour faciliter l'organisation de notre structure, les repas seront transportés dans des contenants hermétiques, il sera noté le nom /prénom de l'enfant puis mis au réfrigérateur dès leur arrivée pour respecter la chaîne du froid.</p>
+            <p>Des dispositions particulières seront prises lorsqu'un enfant présentera des allergies alimentaires. Nous afficherons dans la cuisine sur un tableau prévu à cet effet, le nom et la photo de l'enfant, et son type d'allergie.</p>
+            <p>Pour les bébés, les parents apporteront la boîte de lait fermée ou le nombre de dosettes qu'il faut pour la journée, une bouteille d'eau tous les deux jours ou nous pourrons fournir l'eau du robinet, et les biberons marqués au nom de l'enfant.</p>
+            <p>Dans le cadre d'un enfant allaité, le parent a la possibilité de nous apporter le lait maternel dans un pot hermétique, en précisant le nom de l'enfant et la date à laquelle le lait a été tiré, ainsi que les biberons.</p>
+            
+            <h3>d) Le jardin</h3>
+            <p>Dès que le temps le permet, la MAM ouvre ses portes sur le jardin. Sortir permet notamment à l'enfant de développer son langage, découvrir la nature, les bruits extérieurs.</p>
+            <p>Nous favoriserons autant que possible les temps de jeux dans l'espace extérieur à la MAM. Il est en effet important que les enfants puissent s'aérer, courir, se défouler...</p>
+            <p>Nous mettrons en place un petit potager avec les enfants.</p>
+
+            <h3>e) Participation des familles à la vie de la MAM</h3>
+        <p>Chaque année, l'ensemble des parents seront conviés à la fête de l'été qui aura lieu avant les congés du mois d'août.</p>
+        <p>Ceci permettra de renforcer la confiance et la cohésion assistantes maternelles/parents mais aussi permettre à l'ensemble des parents de se rencontrer.</p>
+        <p>L'association créée pour la MAM étant à but non lucratif, une participation de 20 euros sera demandée lors de création d'un contrat et renouvelée à chaque anniversaire de contrat. Cette participation sera à régler par chèque à l'ordre de l'association MAM'erveille.</p>
+    </div>
+
+    <div class="card">
+        <h2>5 - La santé</h2>
+        
+        <h3>a) Sécurité et prévention des risques</h3>
+        <p>Pour des questions évidentes de sécurité, tout bijou et cordon sont interdits (colliers, bracelets, boucles d'oreilles), les attache-sucettes seront retirées pour la sieste.</p>
+        <p>En cas de nécessité et pour tous problèmes sur un enfant (malaise, chute, coup, ....), nous contacterons le 15, les parents ainsi que la PMI.</p>
+        <p>En cas d'urgence, et étant diplômées aux gestes de premiers secours (et renouvelé tous les 2 ans), nous appliquerons le protocole des premiers gestes de secours.</p>
+        <p>Un thermomètre mural sera installé pour vérifier la température de chaque pièce.</p>
+        <p>Selon les normes de sécurité en vigueur, des extincteurs seront installés et vérifiés par des professionnels compétents.</p>
+        
+        <h3>b) L'accueil de l'enfant et de sa famille</h3>
+        <p>Accueillir, c'est préparer l'enfant à se séparer de ses parents toute la journée. L'enfant n'a pas la notion du temps pour envisager le retour de ses parents. Il est nécessaire de mettre en place des repères et des rituels pour le rassurer et le sécuriser.</p>
+        <p>Accueillir un enfant c'est aussi accueillir sa famille. Ouvrir la structure aux parents, c'est permettre à l'enfant de surmonter la séparation d'avec son milieu familial et permettre aux enfants d'investir ce nouveau lieu.</p>
+        <p>Le premier entretien est l'occasion d'un échange afin de mieux connaître l'enfant et les attentes des parents.</p>
+        <p>La qualité de la relation avec les parents est primordiale pour que s'instaure une confiance mutuelle, facteur essentiel du bien-être de l'enfant.</p>
+        <p>Nous serons donc particulièrement vigilantes pour l'accompagnement à la séparation tant du côté de l'enfant que du parent.</p>
+        
+        <h3>c) L'accueil de l'enfant en situation de handicap</h3>
+        <p>Chaque handicap nécessite une prise en charge spécifique et adaptée. Par conséquent, une étude préalable devra être nécessaire en lien avec le médecin, les parents et le service PMI pour pouvoir mettre en œuvre l'accueil suivant le PAI instauré par le médecin. Ces adaptations pourront notamment concerner notre organisation et la formation de l'équipe.</p>
+    </div>
+
+    <div class="card">
+        <h2>Pour conclure</h2>
+        <p>Chaque enfant est unique et évolue à son propre rythme, notre rôle est de les accompagner et de les aider à se construire en les encourageant. Nous serons là pour les aider à trouver leur équilibre et leur épanouissement.</p>
+        <p>De même que la valorisation et l'autonomie sont deux points importants dans les phases d'apprentissage et nous les aiderons à grandir en toute sérénité.</p>
+        <p style="text-align: center; margin-top: 3rem; font-weight: bold; color: #ff6b9d;">Angélique, Magalie & Caroline</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 MAM'erveille - Tous droits réservés</p>
+    <p>Angélique, Caroline & Magalie</p>
+</footer>
