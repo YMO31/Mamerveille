@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mamerveille-castelnau.fr/</loc>
-    <lastmod>2025-03-16</lastmod>
+    <loc>https://mamerveille-castelnau.fr/</loc>
+    <lastmod>2024-12-17</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mamerveille-castelnau.fr/charte.html</loc>
+    <lastmod>2024-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mamerveille-castelnau.fr/projet.html</loc>
+    <lastmod>2024-12-17</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
