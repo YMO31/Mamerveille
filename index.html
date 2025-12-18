@@ -53,13 +53,14 @@
 
         .logo-container {
             display: flex;
+            flex-direction: row;  /* horizontal sur PC */
             align-items: center;
             gap: 1rem;
         }
 
         .logo-img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             border: 3px solid white;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -72,20 +73,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
-        /* Ajoutez dans le @media (max-width: 768px) */
-        .logo-container {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
         
-        .logo-img {
-            width: 70px;
-            height: 70px;
-        }
-        
-        .logo-text {
-            font-size: 1.5rem;
-        }
                 
         .header-right {
             display: flex;
@@ -357,6 +345,20 @@
             .lightbox-nav { padding: 0.5rem 1rem; font-size: 2rem; }
             .lightbox-prev { left: 0.5rem; }
             .lightbox-next { right: 0.5rem; }
+            /* Ajoutez dans le @media (max-width: 768px) */
+            .logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
