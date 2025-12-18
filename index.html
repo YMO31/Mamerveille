@@ -192,7 +192,21 @@
             margin-bottom: 1rem;
             line-height: 1.8;
         }
+
+        .video-wrapper {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
         
+        .video-wrapper video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            background: #000;
+        }
+
         .info-box {
             background: linear-gradient(135deg, #fff3cd, #ffe69c);
             padding: 1.5rem;
@@ -424,6 +438,12 @@
             <h2>📸 Notre Lieu d'Accueil</h2>
             <p>Maison T4 de plein pied d'environ 140 m² spacieuse et lumineuse avec un jardin spacieux entièrement sécurisé et clôturé. Découvrez notre espace en photos :</p>
             <div class="gallery" id="gallery"></div>
+            <div class="video-wrapper">
+                <video controls preload="metadata" poster="images/video-poster.jpg">
+                    <source src="videos/video.mp4" type="video/mp4">
+                    Ton navigateur ne supporte pas la vidéo HTML5.
+                </video>
+            </div>
         </div>
 
         
