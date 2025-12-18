@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Ajoutez ces lignes SEO -->
-    <meta name="description" content="MAM'erveille : Maison d'Assistantes Maternelles à Castelnau d'Estrétefonds (31620). Accueil bienveillant pour enfants de 0 à 6 ans par Angélique, Caroline et Magalie.">
-    <meta name="keywords" content="MAM'erveille, assistante maternelle, Castelnau d'Estrétefonds, crèche, garde enfants, 31620, Haute-Garonne">
-    <meta name="author" content="MAM'erveille">
-    
-    <!-- Open Graph pour Facebook -->
-    <meta property="og:title" content="MAM'erveille Castelnau – Maison d'Assistantes Maternelles">
-    <meta property="og:description" content="Accueil chaleureux et bienveillant pour les enfants de 0 à 6 ans à Castelnau d'Estrétefonds">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mamerveille-castelnau.fr">
-    <meta property="og:image" content="https://mamerveille-castelnau.fr/images/1000196006.jpg">
-    
-    <link rel="canonical" href="https://www.mamerveille-castelnau.fr/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAM'erveille Castelnau – Maison d’Assistantes Maternelles</title>    <style>
+    <meta name="description" content="Projet d'accueil de MAM'erveille à Castelnau d'Estrétefonds. Notre approche pédagogique et notre organisation pour l'accueil des enfants de 0 à 6 ans.">
+    <meta name="keywords" content="MAM'erveille, projet pédagogique, assistante maternelle, Castelnau d'Estrétefonds, 31620">
+    <meta name="author" content="MAM'erveille">
+    
+    <meta property="og:title" content="Projet d'Accueil - MAM'erveille Castelnau">
+    <meta property="og:description" content="Découvrez notre projet pédagogique et notre organisation quotidienne">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mamerveille-castelnau.fr/projet.html">
+    
+    <link rel="canonical" href="https://www.mamerveille-castelnau.fr/projet.html" />
+    <title>Projet d'Accueil - MAM'erveille Castelnau</title>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -45,15 +43,9 @@
             gap: 1rem;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
         .logo-container {
             display: flex;
-            flex-direction: row;  /* horizontal sur PC */
+            flex-direction: row;
             align-items: center;
             gap: 1rem;
         }
@@ -73,8 +65,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
-        
-                
         .header-right {
             display: flex;
             align-items: center;
@@ -97,12 +87,6 @@
             transform: scale(1.2);
         }
         
-        .social-icons img {
-            width: 100%;
-            height: 100%;
-            filter: brightness(0) invert(1);
-        }
-        
         nav ul {
             list-style: none;
             display: flex;
@@ -122,40 +106,16 @@
             background: rgba(255, 255, 255, 0.25);
         }
         
-        .hero {
-            position: relative;
+        /* Bannière spécifique pour page projet */
+        .page-header {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(255, 217, 61, 0.9));
             color: white;
-            padding: 6rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            background-image: url('images/1000196006.jpg');
-            background-size: cover;
-            background-position: center 30%;
-            min-height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.85), rgba(255, 217, 61, 0.75));
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
+        .page-header h1 {
+            font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
@@ -193,128 +153,17 @@
             line-height: 1.8;
         }
         
-        .info-box {
-            background: linear-gradient(135deg, #fff3cd, #ffe69c);
-            padding: 1.5rem;
-            border-left: 5px solid #ffd93d;
-            border-radius: 10px;
-            margin: 2rem 0;
+        .card ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
         }
         
-        .info-box a {
-            color: #ff6b9d;
-            text-decoration: none;
-            font-weight: 600;
+        .card li {
+            margin-bottom: 0.7rem;
         }
         
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 15px;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.95);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .lightbox.active {
-            display: flex;
-        }
-        
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 15px;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: white;
-            font-size: 3.5rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            font-size: 3rem;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        .lightbox-prev { left: 2rem; }
-        .lightbox-next { right: 2rem; }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 2.5rem;
-            background: linear-gradient(135deg, #1877f2, #4267B2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-5px);
-        }
-        
-        .social-links a:nth-child(2) {
-            background: linear-gradient(135deg, #E1306C, #C13584);
-        }
-        
-        .social-links img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
+        .card em {
+            color: #666;
         }
         
         footer {
@@ -335,17 +184,23 @@
         }
         
         @media (max-width: 768px) {
-            .header-content { flex-direction: column; text-align: center; }
-            .header-right { flex-direction: column; }
-            nav ul { flex-direction: column; width: 100%; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
-            .card { padding: 1.5rem; }
-            .lightbox-nav { padding: 0.5rem 1rem; font-size: 2rem; }
-            .lightbox-prev { left: 0.5rem; }
-            .lightbox-next { right: 0.5rem; }
-            /* Ajoutez dans le @media (max-width: 768px) */
+            .header-content { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .header-right { 
+                flex-direction: column; 
+            }
+            nav ul { 
+                flex-direction: column; 
+                width: 100%; 
+            }
+            .page-header h1 { 
+                font-size: 1.8rem; 
+            }
+            .card { 
+                padding: 1.5rem; 
+            }
             .logo-container {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -526,7 +381,7 @@
             <p>Les gigoteuses seront fournies par les parents et lavées avec les draps par nos soins chaque vendredi fin de journée ou avant si besoin.</p>
             <p>Trois chambres seront consacrées aux siestes et réservées pour chaque tranche d'âges et selon le rythme de chaque enfant.</p>
             <p>Nous surveillerons son sommeil toutes les 15 minutes et des visiophones seront installés dans chaque chambre.</p>
-            
+
             <h3>c) L'alimentation</h3>
             <p>Manger est un plaisir et un moment de convivialité. C'est un moment propice aux échanges et découvertes au niveau tactile et sensoriel.</p>
             <p>Au cours du repas, nous veillerons à créer une ambiance agréable et calme. Nous favoriserons l'autonomie et l'éveil au goût.</p>
@@ -539,43 +394,45 @@
             <p>Dès que le temps le permet, la MAM ouvre ses portes sur le jardin. Sortir permet notamment à l'enfant de développer son langage, découvrir la nature, les bruits extérieurs.</p>
             <p>Nous favoriserons autant que possible les temps de jeux dans l'espace extérieur à la MAM. Il est en effet important que les enfants puissent s'aérer, courir, se défouler...</p>
             <p>Nous mettrons en place un petit potager avec les enfants.</p>
-
+            
             <h3>e) Participation des familles à la vie de la MAM</h3>
-        <p>Chaque année, l'ensemble des parents seront conviés à la fête de l'été qui aura lieu avant les congés du mois d'août.</p>
-        <p>Ceci permettra de renforcer la confiance et la cohésion assistantes maternelles/parents mais aussi permettre à l'ensemble des parents de se rencontrer.</p>
-        <p>L'association créée pour la MAM étant à but non lucratif, une participation de 20 euros sera demandée lors de création d'un contrat et renouvelée à chaque anniversaire de contrat. Cette participation sera à régler par chèque à l'ordre de l'association MAM'erveille.</p>
+            <p>Chaque année, l'ensemble des parents seront conviés à la fête de l'été qui aura lieu avant les congés du mois d'août.</p>
+            <p>Ceci permettra de renforcer la confiance et la cohésion assistantes maternelles/parents mais aussi permettre à l'ensemble des parents de se rencontrer.</p>
+            <p>L'association créée pour la MAM étant à but non lucratif, une participation de 20 euros sera demandée lors de création d'un contrat et renouvelée à chaque anniversaire de contrat. Cette participation sera à régler par chèque à l'ordre de l'association MAM'erveille.</p>
+        </div>
+    
+        <div class="card">
+            <h2>5 - La santé</h2>
+            
+            <h3>a) Sécurité et prévention des risques</h3>
+            <p>Pour des questions évidentes de sécurité, tout bijou et cordon sont interdits (colliers, bracelets, boucles d'oreilles), les attache-sucettes seront retirées pour la sieste.</p>
+            <p>En cas de nécessité et pour tous problèmes sur un enfant (malaise, chute, coup, ....), nous contacterons le 15, les parents ainsi que la PMI.</p>
+            <p>En cas d'urgence, et étant diplômées aux gestes de premiers secours (et renouvelé tous les 2 ans), nous appliquerons le protocole des premiers gestes de secours.</p>
+            <p>Un thermomètre mural sera installé pour vérifier la température de chaque pièce.</p>
+            <p>Selon les normes de sécurité en vigueur, des extincteurs seront installés et vérifiés par des professionnels compétents.</p>
+            
+            <h3>b) L'accueil de l'enfant et de sa famille</h3>
+            <p>Accueillir, c'est préparer l'enfant à se séparer de ses parents toute la journée. L'enfant n'a pas la notion du temps pour envisager le retour de ses parents. Il est nécessaire de mettre en place des repères et des rituels pour le rassurer et le sécuriser.</p>
+            <p>Accueillir un enfant c'est aussi accueillir sa famille. Ouvrir la structure aux parents, c'est permettre à l'enfant de surmonter la séparation d'avec son milieu familial et permettre aux enfants d'investir ce nouveau lieu.</p>
+            <p>Le premier entretien est l'occasion d'un échange afin de mieux connaître l'enfant et les attentes des parents.</p>
+            <p>La qualité de la relation avec les parents est primordiale pour que s'instaure une confiance mutuelle, facteur essentiel du bien-être de l'enfant.</p>
+            <p>Nous serons donc particulièrement vigilantes pour l'accompagnement à la séparation tant du côté de l'enfant que du parent.</p>
+            
+            <h3>c) L'accueil de l'enfant en situation de handicap</h3>
+            <p>Chaque handicap nécessite une prise en charge spécifique et adaptée. Par conséquent, une étude préalable devra être nécessaire en lien avec le médecin, les parents et le service PMI pour pouvoir mettre en œuvre l'accueil suivant le PAI instauré par le médecin. Ces adaptations pourront notamment concerner notre organisation et la formation de l'équipe.</p>
+        </div>
+    
+        <div class="card">
+            <h2>Pour conclure</h2>
+            <p>Chaque enfant est unique et évolue à son propre rythme, notre rôle est de les accompagner et de les aider à se construire en les encourageant. Nous serons là pour les aider à trouver leur équilibre et leur épanouissement.</p>
+            <p>De même que la valorisation et l'autonomie sont deux points importants dans les phases d'apprentissage et nous les aiderons à grandir en toute sérénité.</p>
+            <p style="text-align: center; margin-top: 3rem; font-weight: bold; color: #ff6b9d;">Angélique, Magalie & Caroline</p>
+        </div>
     </div>
-
-    <div class="card">
-        <h2>5 - La santé</h2>
-        
-        <h3>a) Sécurité et prévention des risques</h3>
-        <p>Pour des questions évidentes de sécurité, tout bijou et cordon sont interdits (colliers, bracelets, boucles d'oreilles), les attache-sucettes seront retirées pour la sieste.</p>
-        <p>En cas de nécessité et pour tous problèmes sur un enfant (malaise, chute, coup, ....), nous contacterons le 15, les parents ainsi que la PMI.</p>
-        <p>En cas d'urgence, et étant diplômées aux gestes de premiers secours (et renouvelé tous les 2 ans), nous appliquerons le protocole des premiers gestes de secours.</p>
-        <p>Un thermomètre mural sera installé pour vérifier la température de chaque pièce.</p>
-        <p>Selon les normes de sécurité en vigueur, des extincteurs seront installés et vérifiés par des professionnels compétents.</p>
-        
-        <h3>b) L'accueil de l'enfant et de sa famille</h3>
-        <p>Accueillir, c'est préparer l'enfant à se séparer de ses parents toute la journée. L'enfant n'a pas la notion du temps pour envisager le retour de ses parents. Il est nécessaire de mettre en place des repères et des rituels pour le rassurer et le sécuriser.</p>
-        <p>Accueillir un enfant c'est aussi accueillir sa famille. Ouvrir la structure aux parents, c'est permettre à l'enfant de surmonter la séparation d'avec son milieu familial et permettre aux enfants d'investir ce nouveau lieu.</p>
-        <p>Le premier entretien est l'occasion d'un échange afin de mieux connaître l'enfant et les attentes des parents.</p>
-        <p>La qualité de la relation avec les parents est primordiale pour que s'instaure une confiance mutuelle, facteur essentiel du bien-être de l'enfant.</p>
-        <p>Nous serons donc particulièrement vigilantes pour l'accompagnement à la séparation tant du côté de l'enfant que du parent.</p>
-        
-        <h3>c) L'accueil de l'enfant en situation de handicap</h3>
-        <p>Chaque handicap nécessite une prise en charge spécifique et adaptée. Par conséquent, une étude préalable devra être nécessaire en lien avec le médecin, les parents et le service PMI pour pouvoir mettre en œuvre l'accueil suivant le PAI instauré par le médecin. Ces adaptations pourront notamment concerner notre organisation et la formation de l'équipe.</p>
-    </div>
-
-    <div class="card">
-        <h2>Pour conclure</h2>
-        <p>Chaque enfant est unique et évolue à son propre rythme, notre rôle est de les accompagner et de les aider à se construire en les encourageant. Nous serons là pour les aider à trouver leur équilibre et leur épanouissement.</p>
-        <p>De même que la valorisation et l'autonomie sont deux points importants dans les phases d'apprentissage et nous les aiderons à grandir en toute sérénité.</p>
-        <p style="text-align: center; margin-top: 3rem; font-weight: bold; color: #ff6b9d;">Angélique, Magalie & Caroline</p>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 MAM'erveille - Tous droits réservés</p>
-    <p>Angélique, Caroline & Magalie</p>
-</footer>
+    
+    <footer>
+        <p>&copy; 2024 MAM'erveille - Tous droits réservés</p>
+        <p>Angélique, Caroline & Magalie</p>
+    </footer>
+</body>
+</html>
