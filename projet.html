@@ -190,6 +190,7 @@
             .header-right { 
                 flex-direction: column; 
                 width: 100%;  /* ← Ajoutez */
+                align-items: center;
             }
             nav { 
                 width: 100%;  /* ← Ajoutez */
@@ -198,10 +199,17 @@
                 flex-direction: column; 
                 width: 100%;
                 align-items: center;  /* ← Ajoutez */
+                padding: 0; 
             }
             nav a {
-                display: block;  /* ← Ajoutez */
+                display: inline-block;
                 text-align: center;  /* ← Ajoutez */
+            }
+
+            nav li {
+                width: 100%;  /* ← Ajoutez */
+                display: flex;  /* ← Ajoutez */
+                justify-content: center;  /* ← Ajoutez */
             }
             .card { padding: 1.5rem; }
         }
