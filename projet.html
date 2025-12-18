@@ -19,7 +19,19 @@
     <title>MAM'erveille Castelnau – Maison d’Assistantes Maternelles</title>    <style>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;  /* ← Empêche le scroll horizontal */
+        }
         
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
@@ -32,6 +44,8 @@
             color: white;
             padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 100%;  /* ← Ajoutez */
+            margin: 0;    /* ← Ajoutez */
         }
         
         .header-content {
@@ -92,11 +106,13 @@
             background: rgba(255, 255, 255, 0.25);
         }
         
-        .page-header {
+       .page-header {
             background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(255, 217, 61, 0.9));
             color: white;
             padding: 3rem 2rem;
             text-align: center;
+            width: 100%;  /* ← Ajoutez */
+            margin: 0;    /* ← Ajoutez */
         }
         
         .page-header h1 {
