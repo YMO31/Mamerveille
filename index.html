@@ -199,15 +199,6 @@
             justify-content: center;
         }
         
-        .video-wrapper video {
-            max-width: 520px;     /* largeur max desktop */
-            max-height: 420px;    /* limite dure desktop */
-            width: auto;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
-            background: #000;
-        }
 
         .info-box {
             background: linear-gradient(135deg, #fff3cd, #ffe69c);
@@ -348,6 +339,14 @@
         footer a {
             color: #ffd93d;
             text-decoration: none;
+        }
+
+        .video-wrapper video {
+            width: auto !important;
+            height: auto !important;
+            max-width: 520px !important;
+            max-height: 420px !important;
+            display: block;
         }
         
         @media (max-width: 768px) {
