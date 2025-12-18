@@ -342,11 +342,14 @@
         }
 
         .video-wrapper video {
-            max-width: 520px;
-            max-height: 55vh;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            }
+            width: 100%;              /* même largeur que la galerie */
+            max-width: 100%;          /* pas de limite artificielle */
+            max-height: 60vh;         /* plafonné sur desktop */
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+            background: #000;
+        }
         
         @media (max-width: 768px) {
             .header-content { flex-direction: column; text-align: center; }
