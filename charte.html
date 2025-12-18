@@ -18,202 +18,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAM'erveille Castelnau – Maison d’Assistantes Maternelles</title>    <style>
     <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.7;
-        color: #2c3e50;
-        background: #f8f9fa;
-    }
-    
-    header {
-        background: linear-gradient(135deg, #ff6b9d, #ffd93d);
-        color: white;
-        padding: 1rem 0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .logo-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .logo-img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        object-fit: cover;
-    }
-    
-    .logo-text {
-        font-size: 1.8rem;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    .header-right {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .social-icons {
-        display: flex;
-        gap: 1rem;
-    }
-    
-    .social-icons a {
-        display: block;
-        width: 32px;
-        height: 32px;
-        transition: transform 0.3s;
-    }
-    
-    .social-icons a:hover {
-        transform: scale(1.2);
-    }
-    
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-    }
-    
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.7rem 1.3rem;
-        border-radius: 25px;
-        transition: all 0.3s;
-    }
-    
-    nav a:hover, nav a.active {
-        background: rgba(255, 255, 255, 0.25);
-    }
-    
-    /* Bannière page charte */
-    .page-header {
-        background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(255, 217, 61, 0.9));
-        color: white;
-        padding: 3rem 2rem;
-        text-align: center;
-    }
-    
-    .page-header h1 {
-        font-size: 2.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
-    }
-    
-    .card {
-        background: white;
-        border-radius: 20px;
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    
-    .card h2 {
-        color: #ff6b9d;
-        margin-bottom: 1.5rem;
-        font-size: 2.2rem;
-        border-bottom: 3px solid #ffd93d;
-        padding-bottom: 0.5rem;
-    }
-    
-    .card h3 {
-        color: #6bcf7f;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-size: 1.6rem;
-    }
-    
-    .card p {
-        margin-bottom: 1rem;
-        line-height: 1.8;
-    }
-    
-    .card ul {
-        margin-left: 2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .card li {
-        margin-bottom: 0.7rem;
-    }
-    
-    footer {
-        background: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 3rem 2rem;
-        margin-top: 4rem;
-    }
-    
-    footer p {
-        margin: 0.5rem 0;
-    }
-    
-    footer a {
-        color: #ffd93d;
-        text-decoration: none;
-    }
-    
-    @media (max-width: 768px) {
-        .header-content { 
-            flex-direction: column; 
-            text-align: center; 
-        }
-        .header-right { 
-            flex-direction: column; 
-        }
-        nav ul { 
-            flex-direction: column; 
-            width: 100%; 
-        }
-        .page-header h1 { 
-            font-size: 1.8rem; 
-        }
-        .card { 
-            padding: 1.5rem; 
-        }
-        .logo-container {
-            flex-direction: column;
-            gap: 0.5rem;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
         }
         
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #ffd93d);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .logo-img {
-            width: 130px;
-            height: 130px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            object-fit: cover;
         }
         
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-    }
-</style>
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.3rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        /* Bannière spécifique pour page projet */
+        .page-header {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.9), rgba(255, 217, 61, 0.9));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #ff6b9d;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #ffd93d;
+            padding-bottom: 0.5rem;
+        }
+        
+        .card h3 {
+            color: #6bcf7f;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .card ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .card em {
+            color: #666;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        footer a {
+            color: #ffd93d;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .header-right { 
+                flex-direction: column; 
+            }
+            nav ul { 
+                flex-direction: column; 
+                width: 100%; 
+            }
+            .page-header h1 { 
+                font-size: 1.8rem; 
+            }
+            .card { 
+                padding: 1.5rem; 
+            }
+            .logo-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-img {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
